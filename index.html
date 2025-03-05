@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		let params = new URLSearchParams(window.location.search);
+		let url = params.get('url');
+		let q = params.get('q');
+		location = url + '?' + q.replaceAll('+', '%20');
+	</script>
+</head>
+<body></body>
+</html>
