@@ -4,14 +4,20 @@
 	<title></title>
 	<script type="text/javascript">
 		let params = new URLSearchParams(window.location.search);
-		let t = params.get('t');
+		let pt = params.get('pt') // paramter type
+		let st = params.get('st'); // space type
 		let url = params.get('url');
-		let s = params.get('s');
+		let s = params.get('s'); // search string
 
-		if (t == 'dash')
-			location = url + s.replaceAll	('+', '-');
+		if (st == 'dash')
+			s = s.replaceAll(' ', '-');
 		else // percent encoding
-			location = url + s.replaceAll('+', '%20');
+			s = s.replaceAll(' ', '%20');
+
+		if (pt == 'route')
+			location = url + s + '/';
+		else // query string
+			location = url + '?' + s;
 	</script>
 </head>
 <body></body>
