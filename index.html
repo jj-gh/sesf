@@ -9,9 +9,9 @@
 		let s = params.get('s');
 
 		if (t == 'dash')
-			location = url + q.replaceAll	('+', '-');
+			location = url + s.replaceAll	('+', '-');
 		else // percent encoding
-			location = url + q.replaceAll('+', '%20');
+			location = url + s.replaceAll('+', '%20');
 	</script>
 </head>
 <body></body>
