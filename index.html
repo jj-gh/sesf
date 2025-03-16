@@ -4,9 +4,14 @@
 	<title></title>
 	<script type="text/javascript">
 		let params = new URLSearchParams(window.location.search);
+		let t = params.get('t');
 		let url = params.get('url');
-		let q = params.get('q');
-		location = url + '?' + q.replaceAll('+', '%20');
+		let s = params.get('s');
+
+		if (t == 'dash')
+			location = url + q.replaceAll	('+', '-');
+		else // percent encoding
+			location = url + q.replaceAll('+', '%20');
 	</script>
 </head>
 <body></body>
